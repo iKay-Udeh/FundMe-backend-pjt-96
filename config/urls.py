@@ -1,4 +1,4 @@
-"""fundadmin URL Configuration
+"""config URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -18,5 +18,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('fundmeadminapp.urls')),
+    path('admin-api/register/', include('adminaccounts.api.urls', namespace='api-register')),
+    path('admin-api/login/', include('adminaccounts.api.urls', namespace='api-login')),
 ]
+
+# REST Framework API
